@@ -6,7 +6,7 @@ public class Media{
     public static void main(String[] args) {
         //Declaração de variável 
         //double n1, n2, media;
-        double[] nota = new double[4];
+        double[] nota;//= new double[4];
         double media = 0;
 
         //Objeto de entrada
@@ -16,7 +16,13 @@ public class Media{
         System.out.println("\n\t\t\t -- Média das Notas --\n");
 
         //Entrada
-        for(int i = 0; i <= 3; i++){
+        System.out.print("Quantas notas? ");
+        int qtd = entrada.nextInt();
+
+        //Instanciando o vetor
+        nota = new double[qtd];
+
+        for(int i = 0; i < nota.length; i++){
             System.out.println("Informe a " + (i+1) + "ª nota: ");
             nota[i] = entrada.nextDouble();
         }
@@ -29,13 +35,13 @@ public class Media{
         n2 = entrada.nextDouble();
         */
         //Processamento
-        for(int i = 0; i <= 3; i++){
+        for(int i = 0; i < nota.length; i++){
             media += nota[i];
         } 
-        media /= 4;
+        media /= nota.length;
 
         //Saída
-        for(int i = 0; i <= 3; i++){
+        for(int i = 0; i < nota.length; i++){
             System.out.println("Nota " + (i + 1) +": " +nota[i]);
         }
 
